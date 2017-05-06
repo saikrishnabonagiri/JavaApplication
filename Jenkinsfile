@@ -46,8 +46,5 @@ pipeline{
                 )
                 }
             }
-        post{
-            echo "${env.COMMENT}"
-        }
     }
 }
