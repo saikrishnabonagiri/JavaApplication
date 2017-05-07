@@ -33,7 +33,7 @@ pipeline{
             stage('build'){
                 steps{
                     echo "Building the Application."
-                    sh 'ant'
+                    //sh 'ant'
                 }
             }
             stage('notify'){
