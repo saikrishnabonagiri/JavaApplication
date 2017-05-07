@@ -23,9 +23,9 @@ pipeline{
                         body: "<html> <body> <h3>Cloning the Application from GitHub is succesful.<br> Do you want to start the building of the project? <br> <br> <form action=${env.BUILD_URL.input.Proceed}input> <input type=submit value= ClickHere </form> <</h2></body><html>",
                     attachLog: true,
                     )
-                    //script {
-                      //  env.COMMENT = input message: 'Start Building the Project.', parameters: [text(defaultValue: 'Clonning is Successful.', description: 'reason for proceeding to next step.', name: 'comment')]
-                    //}
+                    script {
+                        env.COMMENT = input message: 'Start Building the Project.', parameters: [text(defaultValue: 'Clonning is Successful.', description: 'reason for proceeding to next step.', name: 'comment')]
+                    }
                 }
             }
             
