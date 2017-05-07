@@ -40,7 +40,7 @@ pipeline{
                 steps {
                     emailext (
                         to: 'sai.krishna2559@gmail.com',
-                        subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${env.BUID_RESULT}]",
+                        subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${env.BUILD_STATUS}]",
                         body: "Build URL: ${env.BUILD_URL}/console\n\n",
                     attachLog: true,
                 )
