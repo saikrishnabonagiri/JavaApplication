@@ -40,7 +40,7 @@ pipeline{
             stage('notify'){
                 try {
                 steps {
-                    emaiext (
+                    emailext (
                         to: 'sai.krishna2559@gmail.com',
                         subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.result}]",
                         body: "Build URL: ${env.BUILD_URL}/console\n\n",
