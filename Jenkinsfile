@@ -47,9 +47,10 @@ pipeline{
                     attachLog: true,
                 )
                 }
-                }catch (e) {
+                    catch (e) {
                 error("Build failed because of this and that..")
             }
+                }
             }
     }
 }
