@@ -36,6 +36,7 @@ pipeline{
                     //sh 'ant'
                 }
             }
+            try {
             stage('notify'){
                 steps {
                     emailext (
@@ -45,6 +46,10 @@ pipeline{
                     attachLog: true,
                 )
                 }
+            }
+            }
+            catch (e) {
+                error("Build failed because of this and that..")
             }
     }
 }
