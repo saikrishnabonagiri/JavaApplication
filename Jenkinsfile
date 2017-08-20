@@ -38,8 +38,8 @@ pipeline{
             }
             
             stage('notify'){
+                try {
                 steps {
-                    try {
                     emaiext (
                         to: 'sai.krishna2559@gmail.com',
                         subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.result}]",
@@ -47,10 +47,10 @@ pipeline{
                     attachLog: true,
                 )
                 }
+                }
                     catch (e) {
                 error("Build failed because of this and that..")
             }
-                }
             }
     }
 }
